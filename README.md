@@ -54,5 +54,9 @@ where:
 - After each step we are sampling `batch_size` steps from memory and train neural network on them.
 - 
 ## Results
+<img src="./agent_2.gif" width="500"/>
 > agent driving like bmw driver after 200 episodes:
-![gif](./agent_2.gif)
+
+
+
+
