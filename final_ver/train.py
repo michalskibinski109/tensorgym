@@ -21,7 +21,7 @@ if __name__ == "__main__":
     #### FROM ONE POINT TO ANOTHER ####
     agent = DQNAgent(epsilon=1)
 
-    agent.load("trained_model_240.h5")
+    agent.load("models/trained_model_240.h5")
     agent.epsilon = 0.1
     # STARTING_EPISODE = 60
 

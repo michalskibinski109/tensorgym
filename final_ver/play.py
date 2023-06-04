@@ -42,10 +42,9 @@ def show_how_agent_sees_picture():
 
 
 def play_by_model():
-    train_model = "trained_model_240.h5"
+    train_model = "models/trained_model_240.h5"
 
-    env = gym.make("CarRacing-v2", render_mode="rgb_array")
-    env = gym.wrappers.ResizeObservation(env, (256, 256))
+    env = gym.make("CarRacing-v2", render_mode="human")
     agent = DQNAgent(
         epsilon=0
     )  # Set epsilon to 0 to ensure all actions are instructed by the agent
@@ -61,7 +60,7 @@ def play_by_model():
             current_state_frame_stack = transpose_frames_stack(state_frame_stack_queue)
             action = agent.do_action(current_state_frame_stack)
             next_state, reward, done, trunkaced, _ = env.step(action)
-            frames.append()
+            frames.append(next_state.copy())
             next_state = process_image(next_state)
             state_frame_stack_queue.append(next_state)
             if reward < 0:
